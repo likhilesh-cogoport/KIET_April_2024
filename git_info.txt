@@ -1,0 +1,12 @@
+// open git bash in the root folder of project
+
+git init
+
+add .
+
+git commit -m 'message'
+
+git remote add repo_name url
+
+git push origin {main or master}
+

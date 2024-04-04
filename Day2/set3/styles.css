@@ -1,0 +1,12 @@
+.parent{
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+}
+
+.child{
+    border: 1px solid red;
+    background-color: yellow;
+    width: 100px;
+}

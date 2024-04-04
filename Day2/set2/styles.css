@@ -1,0 +1,50 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    padding: 10px 32px;
+}
+/* 
+.parent{
+    ol{
+        background-color: blueviolet;
+    }
+    ul:first-child{
+        background-color: blue;
+    }
+    ul:last-child{
+        background-color: green;
+
+        li:nth-child(2) {
+            background-color: yellow;
+        }
+    }
+} */
+
+/* ul{
+    li:first-child{
+        background-color: green;
+    }
+    li:last-child{
+        background-color: blue;
+    }
+    li:nth-child(3){
+        background-color: red;
+    }
+    li:nth-of-type(2){
+        background-color: aquamarine;
+    }
+} */
+
+.parent ul{
+        background-color: aqua;
+}
+
+.parent>ul{
+    background-color: brown;
+}
+
+.parent+ul{
+    background-color: blanchedalmond;
+}
+
+

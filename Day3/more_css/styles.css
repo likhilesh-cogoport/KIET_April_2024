@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: beige;
+}
+
+.parent{
+    background-color: yellow;
+    height: 100px;
+    width: 100px;
+    
+    position: fixed;
+    top: 0px;
+    left: 100px;
+}

@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* width = border(l&r)+content+padding; */
+}
+
+/* .parent{
+    background-color: yellow;
+
+    margin: 16px; all
+    margin: 100px 10px; top&bottom left&right
+    margin: 100px 10px 50px; top left&right bottom
+    margin: 100px 10px 50px; top right bottom left
+    margin: 100px 10px; 
+    margin-left: 10px;
+    margin-right: 40px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+    margin: 0px 20px 16px;
+
+    padding: 16px;
+
+    border: 1px solid #ccc; 
+
+    width: 120px;
+
+    box-sizing: border-box;
+} */
+
+/* .heading{
+    margin: 32px 20px 0px;
+    padding: 16px;
+    border: 1px solid #ccc; 
+} */
+
+/* .parent p{
+        background-color: brown;
+} */
+
+/* .parent{
+    p{
+        background-color: brown;
+        width: fit-content;
+    }
+    span{
+        width: 250px;
+        background-color: aqua;
+    }
+} */
+
+/* .parent{
+    width: 200px;
+    background-color: aqua;
+    text-align: center;
+    margin: 0 0 0 auto;
+} */
+
+/* div{
+    text-align: center;
+}
+
+img{
+    display: block;
+    border: 1px solid black;
+    margin: 0 auto;
+} */
+
+p{
+    background-color: blue;
+}
+/* #p1{
+    background-color: aqua;
+} */
+.p2{
+    background-color: aquamarine !important;
+}
+
+.p3{
+    background-color: red;
+}
