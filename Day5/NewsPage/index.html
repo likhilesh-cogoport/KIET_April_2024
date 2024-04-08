@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Page</title>
+    <style>
+        header{
+            height: 100px;
+            background-color: rgb(171, 227, 227);
+        }
+        footer{
+            height: 400px;
+            background-color: lemonchiffon;
+        }
+        *{padding: 0; margin: 0; box-sizing: border-box;}
+        .news-card{
+            background-color: bisque;
+            max-width: 400px;
+            padding: 24px;
+            margin:40px auto;
+        }
+        img{
+            max-width: 300px;
+            max-height: 300px;
+            margin: auto;
+            display: block;
+            margin: 12px;
+        }
+        #root{
+            display: grid;
+            grid-template-columns: 450px 450px 450px;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <main>
+        <div id="root"></div>
+    </main>
+    <footer></footer>
+    <script src="./script.js"></script>
+</body>
+</html>
