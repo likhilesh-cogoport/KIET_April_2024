@@ -1,0 +1,18 @@
+{
+  "name": "internal_modules",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx kill-port 1400 && nodemon script"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "kill-port": "^2.0.1"
+  }
+}
