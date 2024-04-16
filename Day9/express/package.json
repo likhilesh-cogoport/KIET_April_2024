@@ -5,7 +5,7 @@
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx kill-port 1400 && nodemon script"
+    "start": "nodemon node.js"
   },
   "author": "",
   "license": "ISC",
