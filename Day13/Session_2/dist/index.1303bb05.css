@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-container {
+  background-color: #131921;
+  height: 60px;
+}
+
+.category-row {
+  background-color: #222f3e;
+  height: 39px;
+}
+
+.carousal {
+  background-image: url("https://images-eu.ssl-images-amazon.com/images/G/31/Events/img24/MayART24/HERO/MayART24_GW_PC_Hero_NTA1_Event_2x._CB557876662_.jpg");
+  background-size: cover;
+  height: 340px;
+}
+/*# sourceMappingURL=index.1303bb05.css.map */
