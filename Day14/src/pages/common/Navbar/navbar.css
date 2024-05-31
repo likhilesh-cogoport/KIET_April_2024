@@ -1,0 +1,6 @@
+.header-parent-container{
+    display: flex;
+    background-color: aqua;
+    align-items: center;
+    justify-content: space-between;
+}
