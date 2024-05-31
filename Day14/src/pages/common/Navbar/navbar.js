@@ -2,7 +2,6 @@ import "./navbar.css";
 import {Link} from 'react-router-dom';
 
 const Navbar = () => {
-    console.log('Navbar re-rendered!');
     return(
         <div className='header-parent-container'>
             <div className='left'>
