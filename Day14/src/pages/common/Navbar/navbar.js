@@ -1,14 +1,16 @@
 import "./navbar.css";
+import {Link} from 'react-router-dom';
 
 const Navbar = () => {
+    console.log('Navbar re-rendered!');
     return(
         <div className='header-parent-container'>
             <div className='left'>
-                <a href="/">Home</a>
-                <a href="/image-generator">Image Generator</a>
-                <a href="/history">History</a>
-                <a href="/contact">Contact Us</a>
-                <a href="/help">Help</a>
+                <Link to="/">Home</Link>
+                <Link to="/image-generator">Image Generator</Link>
+                <Link to="/history">History</Link>
+                <Link to="/contact">Contact Us</Link>
+                <Link to="/help">Help</Link>
             </div>
             <div className="right">
             </div>
