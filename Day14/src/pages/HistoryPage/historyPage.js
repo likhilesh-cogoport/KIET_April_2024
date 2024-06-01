@@ -3,15 +3,21 @@ import {useState, useEffect} from "react";
 import "./historyPage.css";
 import HistoryCard from "./historyCard";
 
-const HistoryPage = () => {
+const HistoryPage = (props) => {
+    const {userPoints, setUserPoints} = props;
     const [data, setData] = useState([]);
     const [searchText, setSearchText] = useState("");
 
 
     const getData = async () => {
-        const res = await fetch(`https://dummyjson.com/products/search?q=${searchText}`);
-        const obj = await res.json();
-        setData(obj.products);
+        try{
+            const res = await fetch(`https://dummyjson.com/products/search?q=${searchText}`);
+            const obj = await res.json();
+            setData(obj.products);
+        }
+        catch(err){
+            console.log(err);
+        }
     }
 
     useEffect(()=>{
@@ -20,7 +26,7 @@ const HistoryPage = () => {
 
     return (
         <div>
-            <Navbar page="history"/>
+            <Navbar page="history" userPoints={userPoints} setUserPoints={setUserPoints}/>
             <input className="search-box-input" onChange={(e)=>{setSearchText(e.target.value);}}/>
             <div className="history-main-container">
                 {data.map((item)=>{

@@ -13,9 +13,14 @@ const HistoryInformationPage = () => {
     }
 
     const getData = async() => {
-        const res = await fetch(`https://dummyjson.com/products/${historyId}`);
-        const obj = await res.json();
-        setData(obj);
+        try{
+            const res = await fetch(`https://dummyjson.com/products/${historyId}`);
+            const obj = await res.json();
+            setData(obj);
+        }
+        catch(err){
+            console.log(err);
+        }
     }
 
 

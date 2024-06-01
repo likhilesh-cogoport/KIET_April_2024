@@ -18,7 +18,8 @@ const Navbar = (props) => {
                 <Link to="/contact" >Contact Us</Link>
                 <Link to="/help" >Help</Link>
             </div>
-            <div className="right">
+            <div className="right" style={{padding: '4px', color: 'brown'}}>
+                {props.userPoints}
             </div>
         </div>
     )
