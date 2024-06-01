@@ -20,7 +20,7 @@ const HistoryPage = () => {
 
     return (
         <div>
-            <Navbar  page="history"/>
+            <Navbar page="history"/>
             <input className="search-box-input" onChange={(e)=>{setSearchText(e.target.value);}}/>
             <div className="history-main-container">
                 {data.map((item)=>{
