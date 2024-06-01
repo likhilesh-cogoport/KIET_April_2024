@@ -11,7 +11,19 @@ const ImageGenerator = () => {
     }
 
     const handleClick = async () => {
-        setImgSrc(`https://source.unsplash.com/random/400x400/?${searchText}`);
+        const res = await fetch(`http://localhost:1400/api/v1/images`, {
+            method: "POST",
+            body: JSON.stringify({
+                searchText: searchText,
+            }),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        const data = await res.json();
+        if(data?.status === 'success'){
+            setImgSrc(data.data.imageUrl);
+        }
     }
 
     return (
