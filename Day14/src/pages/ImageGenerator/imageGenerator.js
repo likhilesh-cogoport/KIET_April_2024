@@ -11,7 +11,7 @@ const ImageGenerator = () => {
 
     return (
         <div>
-            <Navbar />
+            <Navbar page="imageGenerator"/>
             <div className="image-generator-main-container">
                 <div className='image-search'>
                     <img src="https://png.pngtree.com/thumb_back/fh260/background/20230817/pngtree-lotus-flower-jpg-pink-lotus-flower-image_13023952.jpg" />

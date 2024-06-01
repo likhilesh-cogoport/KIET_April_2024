@@ -1,7 +1,10 @@
 import "./navbar.css";
 import {Link} from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = (props) => {
+
+    console.log("\n✅ : props:", props)
+
     return(
         <div className='header-parent-container'>
             <div className='left'>

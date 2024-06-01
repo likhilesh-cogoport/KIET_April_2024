@@ -4,7 +4,7 @@ import "./homepage.css";
 const HomePage = () => {
     return(
         <div> 
-            <Navbar />
+            <Navbar page="home"/>
             <div className="homepage-main-container">
                 Coming soon...
             </div>

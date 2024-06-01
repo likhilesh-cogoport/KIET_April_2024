@@ -18,11 +18,9 @@ const HistoryPage = () => {
         getData();
     }, [searchText]);
 
-    console.log('normal rendering flow', data);
-
     return (
         <div>
-            <Navbar />
+            <Navbar  page="history"/>
             <input className="search-box-input" onChange={(e)=>{setSearchText(e.target.value);}}/>
             <div className="history-main-container">
                 {data.map((item)=>{
