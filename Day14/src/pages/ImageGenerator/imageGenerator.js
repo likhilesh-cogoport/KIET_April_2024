@@ -3,10 +3,15 @@ import "./imageGenerator.css"
 import {useState} from "react";
 
 const ImageGenerator = () => {
-    const [name, changeName] = useState("Aakash");
+    const [searchText, setSearchText] = useState();
+    const [imageSrc, setImgSrc] = useState("");
 
     const func = (e) => {
-        changeName(e.target.value);
+        setSearchText(e.target.value);
+    }
+
+    const handleClick = async () => {
+        setImgSrc(`https://source.unsplash.com/random/400x400/?${searchText}`);
     }
 
     return (
@@ -14,10 +19,10 @@ const ImageGenerator = () => {
             <Navbar page="imageGenerator"/>
             <div className="image-generator-main-container">
                 <div className='image-search'>
-                    <img src="https://png.pngtree.com/thumb_back/fh260/background/20230817/pngtree-lotus-flower-jpg-pink-lotus-flower-image_13023952.jpg" />
+                    <img src={imageSrc} />
                     <input onChange={(e)=>{func(e)}}/>
+                    <button onClick={handleClick}>Generate</button>
                 </div>
-                {name}
             </div>
         </div>
     )

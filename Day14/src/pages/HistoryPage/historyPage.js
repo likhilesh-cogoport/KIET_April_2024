@@ -1,7 +1,7 @@
 import Navbar from "../common/Navbar/navbar";
-import {Link} from 'react-router-dom';
 import {useState, useEffect} from "react";
 import "./historyPage.css";
+import HistoryCard from "./historyCard";
 
 const HistoryPage = () => {
     const [data, setData] = useState([]);
@@ -24,13 +24,7 @@ const HistoryPage = () => {
             <input className="search-box-input" onChange={(e)=>{setSearchText(e.target.value);}}/>
             <div className="history-main-container">
                 {data.map((item)=>{
-                    return(
-                        <div className='history-card'>
-                            <h4>{item.title}</h4>
-                            <p>{item.description}</p>
-                            <Link to={`/history/${item.id}`}>More</Link>
-                        </div>
-                    )
+                    return <HistoryCard item={item}/>
                 })}
             </div>
         </div>
