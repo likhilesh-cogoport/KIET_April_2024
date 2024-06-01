@@ -4,7 +4,6 @@ import "./historyPage.css";
 import HistoryCard from "./historyCard";
 
 const HistoryPage = (props) => {
-    const {userPoints, setUserPoints} = props;
     const [data, setData] = useState([]);
     const [searchText, setSearchText] = useState("");
 
@@ -26,7 +25,7 @@ const HistoryPage = (props) => {
 
     return (
         <div>
-            <Navbar page="history" userPoints={userPoints} setUserPoints={setUserPoints}/>
+            <Navbar page="history"/>
             <input className="search-box-input" onChange={(e)=>{setSearchText(e.target.value);}}/>
             <div className="history-main-container">
                 {data.map((item)=>{

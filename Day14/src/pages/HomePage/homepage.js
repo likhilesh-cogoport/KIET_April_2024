@@ -2,10 +2,9 @@ import Navbar from "../common/Navbar/navbar";
 import "./homepage.css";
 
 const HomePage = (props) => {
-    const {userPoints, setUserPoints} = props;
     return(
         <div> 
-            <Navbar page="home" userPoints={userPoints} setUserPoints={setUserPoints}/>
+            <Navbar page="home"/>
             <div className="homepage-main-container">
                 Coming soon...
             </div>

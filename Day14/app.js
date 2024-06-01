@@ -4,6 +4,7 @@ import Navbar from './src/pages/common/Navbar/navbar.js';
 import HomePage from "./src/pages/HomePage/homepage.js";
 import ImageGenerator from './src/pages/ImageGenerator/imageGenerator.js';
 import HistoryPage from "./src/pages/HistoryPage/historyPage.js";
+import PointsContext from "./src/context/pointsContext.js";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HistoryInformationPage from "./src/pages/HistoryInformationPage/historyInformationPage.js";
@@ -17,23 +18,31 @@ const App = ()=>{
     const router = createBrowserRouter([
         {
             path: "/",
-            element: <HomePage userPoints={userPoints} setUserPoints={setUserPoints}/>,
+            element: <HomePage/>,
         },
         {
             path: "/image-generator",
-            element: <ImageGenerator userPoints={userPoints} setUserPoints={setUserPoints}/>,
+            element: <ImageGenerator/>,
         },
         {
             path: '/history',
-            element: <HistoryPage userPoints={userPoints} setUserPoints={setUserPoints}/>
+            element: <HistoryPage/>
         },
         {
             path: '/history/:historyId',
-            element: <HistoryInformationPage userPoints={userPoints} setUserPoints={setUserPoints}/>
+            element: <HistoryInformationPage/>
         }
     ]);
 
-    return <RouterProvider router={router} />;
+
+    return (        
+        <PointsContext.Provider value={{
+            userPoints: userPoints, 
+            setUserPoints: setUserPoints,
+        }}>
+            <RouterProvider router={router} />
+        </PointsContext.Provider>
+    );
 }
 
 root.render(<App />);

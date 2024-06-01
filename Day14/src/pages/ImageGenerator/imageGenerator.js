@@ -1,9 +1,10 @@
+import PointsContext from "../../context/pointsContext";
 import Navbar from "../common/Navbar/navbar";
 import "./imageGenerator.css"
-import {useState} from "react";
+import {useState, useContext} from "react";
 
 const ImageGenerator = (props) => {
-    const {userPoints, setUserPoints} = props;
+    const cValue = useContext(PointsContext);
     const [searchText, setSearchText] = useState();
     const [imageSrc, setImgSrc] = useState("");
 
@@ -12,7 +13,7 @@ const ImageGenerator = (props) => {
     }
 
     const handleClick = async () => {
-        setUserPoints(userPoints-1);
+        cValue.setUserPoints(cValue.userPoints-1);
         try{
             const res = await fetch(`http://localhost:1400/api/v1/images`, {
                 method: "POST",
@@ -35,7 +36,7 @@ const ImageGenerator = (props) => {
 
     return (
         <div>
-            <Navbar page="imageGenerator" userPoints={userPoints} setUserPoints={setUserPoints}/>
+            <Navbar page="imageGenerator"/>
             <div className="image-generator-main-container">
                 <div className='image-search'>
                     <img src={imageSrc} />
