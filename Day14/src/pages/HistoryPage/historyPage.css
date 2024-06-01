@@ -19,3 +19,11 @@
         color: rgb(224, 219, 219);
     }
 }
+
+.search-box-input{
+    display: block;
+    width: 200px;
+    margin: 16px auto;
+    padding: 4px 8px;
+
+}

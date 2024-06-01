@@ -6,6 +6,7 @@ import ImageGenerator from './src/pages/ImageGenerator/imageGenerator.js';
 import HistoryPage from "./src/pages/HistoryPage/historyPage.js";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import HistoryInformationPage from "./src/pages/HistoryInformationPage/historyInformationPage.js";
 
 const router = createBrowserRouter([
     {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
     {
         path: '/history',
         element: <HistoryPage />
+    },
+    {
+        path: '/history/:historyId',
+        element: <HistoryInformationPage />
     }
 ]);
 
