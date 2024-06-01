@@ -1,3 +1,5 @@
+const imageModel = require("../models/imageModel");
+
 const generateImage = async (req, res) => {
     const body = req.body;
     const searchText = body.searchText;
@@ -25,7 +27,11 @@ const generateImage = async (req, res) => {
             "mode": "cors",
             "credentials": "include"
         });
-        imageUrl  = await res.json();
+        imageUrl  = await res.json();   
+
+        await imageModel.create({
+            searchText: searchText,
+        });
     }
     catch(err){
         console.log(err);
