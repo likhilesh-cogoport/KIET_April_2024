@@ -9,7 +9,7 @@ const Signup = () => {
         if(!email && !password){
             return;
         }
-        const res = await fetch('http://localhost:1400/api/v1/auth/signup', {
+        const res = await fetch(`${process.env.BACKEND_URL}/api/v1/auth/signup`, {
             headers: {
                 "Content-Type": "application/json",
             },

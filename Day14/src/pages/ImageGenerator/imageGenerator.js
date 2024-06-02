@@ -15,7 +15,7 @@ const ImageGenerator = (props) => {
     const handleClick = async () => {
         cValue.setUserPoints(cValue.userPoints-1);
         try{
-            const res = await fetch(`http://localhost:1400/api/v1/images`, {
+            const res = await fetch(`${process.env.BACKEND_URL}/api/v1/images`, {
                 method: "POST",
                 body: JSON.stringify({
                     searchText: searchText,
