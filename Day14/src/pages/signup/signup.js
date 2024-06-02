@@ -1,16 +1,35 @@
 import Navbar from "../common/Navbar/navbar";
+import {useState} from "react";
 
 const Signup = () => {
-  return (
-    <div>
-        <Navbar page='signup'/>
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    
+    const handleClick = async() => {
+        if(!email && !password){
+            return;
+        }
+        const res = await fetch('http://localhost:1400/api/v1/auth/signup', {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: 'POST',
+            body: JSON.stringify({email, password})
+        });
+        const data = await res.json();
+        console.log(data);
+    }
+
+    return (
         <div>
-            <input />
-            <input />
-            <button>Signup</button>
+            <Navbar page='signup'/>
+            <div>
+                <input onChange={(e)=>setEmail(e.target.value)}/>
+                <input onChange={(e)=>setPassword(e.target.value)}/>
+                <button onClick={handleClick}>Signup</button>
+            </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default Signup;
