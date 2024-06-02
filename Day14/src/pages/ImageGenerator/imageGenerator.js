@@ -22,6 +22,7 @@ const ImageGenerator = (props) => {
                 }),
                 headers: {
                     "Content-Type": "application/json",
+                    "Authorization": "Bearer "+localStorage.getItem("authorization"),
                 },
             });
             const data = await res.json();

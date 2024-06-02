@@ -6,20 +6,27 @@ import ImageGenerator from './src/pages/ImageGenerator/imageGenerator.js';
 import HistoryPage from "./src/pages/HistoryPage/historyPage.js";
 import PointsContext from "./src/context/pointsContext.js";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import HistoryInformationPage from "./src/pages/HistoryInformationPage/historyInformationPage.js";
 import Signup from "./src/pages/signup/signup.js";
+import Login from "./src/pages/login/login.js";
 
 const parent = document.getElementById("root");
 const root = ReactDOM.createRoot(parent);
 
 const App = ()=>{
     const [userPoints, setUserPoints] = useState(20);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(()=>{
+        if(localStorage.getItem('authorization')){
+            return true;
+        }
+        else return false;
+    });
     const login = () => {
         setIsLoggedIn(true);
     }
     const logout = () => {
+        localStorage.removeItem('authorization');
         setIsLoggedIn(false);
     }
 
@@ -30,7 +37,7 @@ const App = ()=>{
         },
         {
             path: "/image-generator",
-            element: <ImageGenerator/>,
+            element: isLoggedIn? <ImageGenerator/> : <Navigate to='/login' />,
         },
         {
             path: '/history',
@@ -43,6 +50,10 @@ const App = ()=>{
         {
             path: '/signup',
             element: <Signup/>
+        },
+        {
+            path: '/login',
+            element: <Login/>
         },
     ]);
 
