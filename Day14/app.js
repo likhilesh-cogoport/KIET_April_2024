@@ -8,12 +8,20 @@ import PointsContext from "./src/context/pointsContext.js";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HistoryInformationPage from "./src/pages/HistoryInformationPage/historyInformationPage.js";
+import Signup from "./src/pages/signup/signup.js";
 
 const parent = document.getElementById("root");
 const root = ReactDOM.createRoot(parent);
 
 const App = ()=>{
     const [userPoints, setUserPoints] = useState(20);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const login = () => {
+        setIsLoggedIn(true);
+    }
+    const logout = () => {
+        setIsLoggedIn(false);
+    }
 
     const router = createBrowserRouter([
         {
@@ -31,7 +39,11 @@ const App = ()=>{
         {
             path: '/history/:historyId',
             element: <HistoryInformationPage/>
-        }
+        },
+        {
+            path: '/signup',
+            element: <Signup/>
+        },
     ]);
 
 
@@ -39,6 +51,9 @@ const App = ()=>{
         <PointsContext.Provider value={{
             userPoints: userPoints, 
             setUserPoints: setUserPoints,
+            isLoggedIn: isLoggedIn,
+            login,
+            logout,
         }}>
             <RouterProvider router={router} />
         </PointsContext.Provider>

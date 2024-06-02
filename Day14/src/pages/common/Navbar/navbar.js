@@ -6,7 +6,6 @@ import {Link} from 'react-router-dom';
 
 const Navbar = (props) => {
     const contextValues = useContext(PointsContext);
-    console.log(contextValues);
     const page = props.page;
 
     const customColor = (x) => {
@@ -21,10 +20,15 @@ const Navbar = (props) => {
                 <Link to="/history"  style={customColor('history')}>History</Link>
                 <Link to="/contact" >Contact Us</Link>
                 <Link to="/help" >Help</Link>
+                <Link to="/signup" style={customColor('signup')}>Signup</Link>
             </div>
             <div className="right" style={{padding: '4px', color: 'brown'}}>
                 {contextValues.userPoints}
             </div>
+            {contextValues.isLoggedIn?
+                <button onClick={contextValues.logout}>Logout</button>
+                :<button onClick={contextValues.login}>Login</button>
+            }
         </div>
     )
 }
